@@ -1,0 +1,8 @@
+
+entrada=[] #Lista vazia que recebe a quantidade de entradas
+go = int(input("Entre com a quantidade de números:")) #Solicitação ao usuário para digitar quantidade de entradas
+for i in range(go):
+    numero = int(input("Digite o número: "))
+    entrada.append(numero) #Insersão de entrada na lista
+print("Este é ó número maior", max(entrada))
+print("Este é o número menor", min(entrada))
