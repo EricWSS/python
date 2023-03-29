@@ -1,0 +1,81 @@
+''' 
+Método utilizado para calcular o total de água armazenando os dados imputados pelo usuário em variáveis simples float
+'''
+# Pede a quantidade de vazamentos notificados
+num_vazamentos = int(input("Digite a quantidade de vazamentos notificados: "))
+
+# Inicializa a variável que irá armazenar o total de água desperdiçada
+total_agua_desperdicada = 0
+
+# Faz um loop para cada vazamento
+for i in range(num_vazamentos):
+    # Pede a quantidade de água perdida por hora e a quantidade de horas que o vazamento ficou aberto
+    agua_perdida_por_hora = float(input("Digite a quantidade de água perdida por hora (em litros): "))
+    horas_aberto = float(input("Digite a quantidade de horas que o vazamento ficou aberto: "))
+
+    # Calcula a quantidade de água desperdiçada e adiciona ao total
+    agua_desperdicada = agua_perdida_por_hora * horas_aberto
+    total_agua_desperdicada += agua_desperdicada
+
+# Exibe o total de água desperdiçada
+print("O total de água desperdiçada foi de:", total_agua_desperdicada, "litros")
+
+
+
+'''
+Método utilizado para armazenar os vazamentos em uma lista. Calcula-se a quantidade de cada chamado e 'appenda' à lista, depois usa-se a função 'sum' para somar 
+os itens da lista associado com um método chamado "compreensão de lista" que cria uma lista a partir de outra lista ou iterável, ela é definida dentro de 
+colchetes [] e segue a seguinte sintaxe geral: [nova_expressao for item in iteravel if condicao],
+'''
+# solicita a quantidade de vazamentos notificados
+qtd_vazamentos = int(input("Informe a quantidade de vazamentos notificados: "))
+
+# lista para armazenar as informações dos vazamentos
+vazamentos = []
+
+# loop para solicitar informações sobre cada vazamento
+for i in range(qtd_vazamentos):
+    # solicita a quantidade de água perdida por hora
+    agua_por_hora = float(input(f"Informe a quantidade de água perdida por hora no vazamento {i+1}: "))
+    
+    # solicita a quantidade de horas que o vazamento ficou aberto
+    horas_aberto = int(input(f"Informe a quantidade de horas que o vazamento {i+1} ficou aberto: "))
+    
+    # adiciona as informações do vazamento à lista
+    vazamentos.append((agua_por_hora, horas_aberto))
+
+# calcula o total de água desperdiçada
+total_agua_desperdicada = sum([agua_por_hora * horas_aberto for agua_por_hora, horas_aberto in vazamentos])
+
+# exibe o total de água desperdiçada
+print(f"O total de água desperdiçada foi de {total_agua_desperdicada} litros.")
+
+
+
+'''
+Método utilizado para criar duas listas com  as quantidades de horas e litros perdidas individualmente, após isso multiplicamos com 'map' os dados de cada indice da 
+lista em órdem crescente e depois comamos os resultados com 'sum'.
+'''
+# função para calcular a água desperdiçada em cada vazamento
+def calcular_agua_desperdicada(qtd_agua_perdida, qtd_horas_aberto):
+    return qtd_agua_perdida * qtd_horas_aberto
+
+# entrada de dados: quantidade de vazamentos
+num_vazamentos = int(input("Digite a quantidade de vazamentos: "))
+
+# listas vazias para armazenar as entradas de água perdida e horas aberto
+qtd_agua_perdida = []
+qtd_horas_aberto = []
+
+# loop para receber as entradas de água perdida e horas aberto
+for i in range(num_vazamentos):
+    agua = int(input(f"Digite a quantidade de água perdida no vazamento {i+1}: "))
+    horas = int(input(f"Digite a quantidade de horas que o vazamento {i+1} ficou aberto: "))
+    qtd_agua_perdida.append(agua)
+    qtd_horas_aberto.append(horas)
+
+# cálculo do total de água desperdiçada utilizando a função e a função 'sum'
+total_agua_desperdicada = sum(map(calcular_agua_desperdicada, qtd_agua_perdida, qtd_horas_aberto))
+
+# impressão do resultado
+print(f"Total de água desperdiçada: {total_agua_desperdicada} litros.")
