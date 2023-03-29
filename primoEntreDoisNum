@@ -1,0 +1,25 @@
+# Função que verifica se um número é primo a partir da não divisibilidade dos primos por outros numeros.
+def primo(num): 
+    if num < 2:
+        return False
+    for j in range(2, num):
+        if num % j == 0: #Se o resto da divisão for 0 então não é primo
+            return False
+    return True
+
+# Recebe os números do usuário
+num1 = int(input("Digite o primeiro número inteiro e positivo: "))
+num2 = int(input("Digite o segundo número inteiro e positivo: "))
+
+# Verifica qual é o menor número caso a ordem de digitação tenha sido trocada
+if num1 < num2:
+    menor = num1
+    maior = num2
+else:
+    menor = num2
+    maior = num1
+
+# Percorre todos os números entre o menor e o maior
+for i in range(menor, maior + 1):
+    if primo(i):
+        print(i, end=", ")
