@@ -1,0 +1,9 @@
+
+notas = []
+provas = int(input("Informe a quantidade de provas a ser calculada: "))
+for i in range(provas):
+    nota=float(input(f"Digite a nota da prova {i+1}: "))
+    notas.append(nota)
+
+media=sum(notas)/len(notas)
+print(media)
