@@ -1,0 +1,14 @@
+
+par=[] 
+impar=[]
+go = int(input("Entre com a quantidade de números:")) #Solicitação ao usuário para digitar quantidade de entradas
+for i in range(go):
+    numero = int(input("Digite o número: "))
+    if numero %2 ==0:
+        par.append(numero) #Insersão de entrada na lista
+    else:
+        impar.append(numero)
+strPar = ", ".join(map(str, par))
+strImpar = ", ".join(map(str, impar))
+print(f"Existe(m) {len(par)} número(s) par(es). São eles:, {strPar}")
+print(f"Existe(m) {len(impar)} número(s) impar(es). São eles:{strImpar}")
