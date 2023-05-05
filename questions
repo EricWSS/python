@@ -1,0 +1,1063 @@
+'''somaParaMedia = 0
+qtdAlunos = int(input("Quantidade de alunos na turma"))
+for i in range(qtdAlunos):
+    notaAluno = float(input(f"Digite a nota do aluno {i+1}: "))
+    somaParaMedia += notaAluno
+
+media= somaParaMedia/qtdAlunos
+print(f"A méria das idades dos alunos é {media}")
+
+#O programa funciona perfeitamente sem o incremento de um while para somar as idades
+'''
+# solicita que o usuário insira a quantidade de alunos na turma
+'''
+num_alunos = int(input("Digite o número de alunos na turma: "))
+
+soma_idades = 0  # inicializa a variável de soma de idades em 0
+
+for i in range(num_alunos):
+    idade = int(input("Digite a idade do aluno {}: ".format(i+1)))  # solicita a idade de cada aluno
+    soma_idades += idade  # adiciona a idade do aluno à soma total de idades
+
+media_idades = soma_idades / num_alunos  # calcula a média de idades
+
+print("A média de idade da turma é:", media_idades)  # exibe a média de idade da turma
+'''
+
+
+#Crie um programa que mostre na tela todos os numeros pares entre 1 e 50
+'''for c in range(1,51,1):
+    if c%2==0:
+        print(c)
+'''
+
+
+#Programa que calcula a soma entre todos os numeros impares que sao multiplos
+#  de 3 e que encontram entre 1 e 500
+'''x=0
+for c in range(1,501,1):
+    if c%2!=0 and c%3==0:
+        x+=c
+print(x)
+'''
+#leia 6 numeros inteiros e mostre apenas daqueles que forem pares. se o 
+# valor digitado for impar, descarteo
+'''c=0
+lista=[]
+for c in range(6):
+    numero=int(input("Digite 6 numeros inteiros: "))
+    if c%2==0:
+        c=+numero
+        lista.append(c)
+        print(c)
+    else:
+        print("O npumero não é ímpar e foi descartado")
+print("Os números ímpares são:", ' '.join(map(str, lista)))
+'''
+#Escreva um programa que leia uma palavra do usuário e conte o número de
+#  vogais na  palavra usando uma estrutura for.
+'''palavras = str(input("Digite uma palavra: "))
+c=0
+for letra in palavras:
+    if letra in "aeiouAEIOU":        #verifica se o operando a esquerda está contido no que está a direita.
+        c+=1
+print("A palavra", palavras, "tem", c, "vogais.")
+'''
+#Escreva um programa que leia um número inteiro positivo do usuário e 
+# calcule o fatorial desse número usando uma estrutura while.
+'''numero = int(input("Escreva um número inteiro positivo: "))
+cont=1
+result=1
+while cont <= numero:
+    result*=cont
+    cont+=1
+print(result)
+'''
+#Escreva um programa que leia uma lista de números inteiros do usuário
+#  e encontre a média dos números da lista usando uma estrutura for.
+
+'''
+numeros = int(input("Digite quantos itens terão a lista: "))
+lista=[]
+x=0
+for x in range (numeros+):
+    posicao=int(input(f"Informe a posição {x+1} na lista: "))
+    lista.append(posicao)
+    x+=1
+
+soma=sum(lista)
+med=soma/x
+print(med)
+'''
+#Escreva um programa que leia uma lista de números inteiros do usuário e encontre o menor número da lista 
+# usando uma estrutura while.
+
+'''
+
+numeros = input("Digite uma lista de números separados por espaço: ")
+
+
+lista_numeros = [int(num) for num in numeros.split()]
+
+# Inicializa a variável menor_numero com o primeiro número da lista
+menor_numero = lista_numeros[0]
+
+# Percorre a lista de números com um loop while
+i = 1
+while i < len(lista_numeros):
+    # Se o número atual for menor do que o menor número atual, atualiza a variável menor_numero
+    if lista_numeros[i] < menor_numero:
+        menor_numero = lista_numeros[i]
+    i += 1
+
+# Imprime o menor número encontrado na lista
+print("O menor número na lista é:", menor_numero)
+
+
+#EU QUE FIZ
+numero=str(input("Informe os numeros separados por espaço: ")) # Solicita que o usuário informe os números separados por espaço
+lista=[int(num) for num in numero.split()] # Converte a entrada do usuário em uma lista de inteiros
+menor=lista[0]# Inicializa a variável menor_numero com o primeiro número da lista
+cont=1  # Percorre a lista de números com um loop while
+while cont < len(lista):
+    if lista[cont] < menor:# Se o número atual {cont} for menor do que o menor número atual {lista}, atualiza a variável {menor}
+        menor=lista[cont]
+    cont+=1
+print("O menor número na lista é:", menor) #Imprime o menor número da lista
+'''
+#Escreva um programa que leia uma lista de números inteiros do usuário e imprima apenas os números pares usando uma estrutura for.
+'''
+numeros = input("Digite a lista de números: ")#Solicita que o usuáruio insira a lista
+lista = [int(num) for num in numeros.split(" ")]# Converte a entrada do usuário em uma lista de inteiros
+
+x=[]
+for num in lista:
+    if num %2 == 0:
+        x.append(num)
+string = ", ".join(str(a) for a in x) 
+print(f"Os numeros pares são: {string}")
+'''
+
+#Escreva um programa que leia uma lista de números inteiros do usuário e imprima apenas os números que são múltiplos de 3 usando uma estrutura while.
+'''
+numeros = str(input("Digite a lista de numeros separados por ESPAÇO: ")) #Solicitar ao usuário que insira a lista
+lista = [int(num) for num in numeros.split()] #Transformando a string em inteiro
+cont=0
+multiplos=[] #lista para armazenar os multiplos
+while cont < len(lista):
+    if lista[cont] %3 ==0:# se o número é múltiplo de 3, adiciona à lista de múltiplos
+        multiplos.append(lista[cont]) #########################COM OU SEM O [CONT]
+    cont+=1
+
+string = ", ".join(str(z) for z in multiplos) #removendo os "[]" do printo abaixo transformando a lista em string
+print(string)# impressão dos múltiplos de 3        
+'''
+#Faça um programa que leia o nome de uma pessoa e imprima o mesmo invertido
+'''
+nome=str(input("Digite o nome a ser invertido: "))
+x=[nome]
+lista=list(x[0])
+lista.reverse()
+resultado = ''.join(lista)# concatenando a lista em uma string sem separador
+print(resultado)
+'''
+
+#Faça um programa que leia 4 notas de um aluno e imprima sua média. Após a média ser calculada,
+#informe se o aluno foi ou não aprovado.
+#a. Aprovado --- média maior ou igual a 7
+#b. Reprovado --- média menor que 5
+#c. Em recuperação --- média entre 5 e 7
+'''
+x=0
+soma=0
+while x < 4: #leia 4 notas de um aluno
+    nota=int(input(f"Digite a nota da prova {x} do aluno: "))
+    soma+=nota
+    x+=1
+media=soma/x
+print(media)
+'''
+
+'''
+nota=str(input("Digite a sequencia de 4 notas do aluno separadas por ESPAÇO: "))
+lista=[int(x) for x in nota.split()] #transformando string em inteiro
+soma=sum(lista)
+media=soma/len(lista)
+print(media)
+'''
+
+'''
+notas = []
+for x in range(4):
+    nota=float(input(f"Digite a nota nº {x+1} do aluno: "))
+    x+=1
+    notas.append(nota)
+media=sum(notas)/len(notas)
+print(media)
+'''
+#Faça um programa que leia 10 números e depois mostre o maior e o menor números lidos
+'''
+lista=[]
+for x in range(2): #na verdade é 10 esse range
+    nota=float(input(f"Digite o {x}º número: "))
+    x+=1
+    lista.append(nota)
+print(f"O menor número é {min(lista)}")
+print(f"O maior número é {max(lista)}")
+'''
+
+#Faça um programa que leia 10 números inteiros e separe os mesmos em pares e ímpares. Mostre
+#quantos pares foram lidos, bem como o maior e o menor número par. Faça o mesmo para os ímpares.
+'''
+listaImpar=[]
+listaPar=[]
+for x in range(3):
+    numero=int(input(f"Digite o {x+1}º número: "))
+    if numero%2==0:
+        listaPar.append(numero)
+    else:
+        listaImpar.append(numero)
+
+listaParFormatada = ", ".join(str(z) for z in listaPar)
+listaImparFormatada = ", ".join(str(z) for z in listaImpar)
+
+if len(listaPar) > 1:
+    listaParFormatada = f"{', '.join(str(z) for z in listaPar[:-1])} e {listaPar[-1]}"
+if len(listaImpar) > 1:
+    listaImparFormatada = f"{', '.join(str(z) for z in listaImpar[:-1])} e {listaImpar[-1]}"
+
+print(f"Foram inseridos {len(listaPar)} número(s) PARES ao sistema! São eles: {listaParFormatada}")
+print(f"Foram inseridos {len(listaImpar)} número(s) IMPARES ao sistema! São eles: {listaImparFormatada}")
+'''
+#Faça um programa que leia 10 números inteiros e imprima a lista ordenada em ordem crescente e decrescente.
+
+'''
+lista=[]
+
+for x in range(2):
+    numeros=int(input("Digite os numeros: "))
+    lista.append(numeros)
+    x+=1
+print(f"Lista crescente: {lista}")
+print(f"lista decrescente: {lista[::-1]}")
+'''
+
+#Faça um programa que leia o nome de 4 vendedores e o valor total de venda que cada um realizou.
+'''
+vendedores=[]
+
+vendas=[]
+for x in range(2):
+    vendedor=str(input(f"Digite os nomes do vendedor {x+1}: "))
+    vendedores.append(vendedor)
+    venda=float(input(f"Digite o total de vendas do vendedor {x+1}"))
+    vendas.append(venda)
+    x+=1
+for y in range(len(vendedores)):
+    print(f"O vendedor {vendedores[y]}, vendeu o total de {vendas[y]:.2f}")
+'''
+#Faça um programa que leia os nomes dos 3 nadadores que subirão ao pódio na ordem do primeiro
+#colocado para o terceiro. Imprima na tela a posição do nadador e seu nome.
+
+'''
+nadadores=[]
+
+for x in range (3):
+    nadador=str(input("Digite o nome do nadador: "))
+    x+=1
+    nadadores.append(nadador)
+print(list(enumerate(nadadores)))
+'''
+#Escreva um programa em Python que receba duas listas como entrada do usuário e retorne uma tupla contendo os 
+# elementos em comum entre as duas listas e a soma desses elementos.
+
+'''        MÉTODO PRÓPRIO
+comuns=[]
+lista1=[]
+lista2=[]
+entradaElementos=int(input("Digite quantos elementos as duas listas terão: "))
+for x in range(entradaElementos):
+    entradaLista1=int(input(f"Digite os valor {x+1}º da lista 1: "))
+    lista1.append(entradaLista1)
+    entradaLista2=int(input(f"Digite os valor {x+1}º da lista 2: "))
+    lista2.append(entradaLista2)
+    x+=1
+for indice in lista1:
+    if indice in lista2:
+        comuns.append(indice)
+tupla=tuple(comuns)
+print("Os elementos em comum nas duas listas são:", tupla)
+print(f"A soma dos elementos em comum é: {sum(comuns)}")
+'''
+
+'''             chatgpt
+# Receber duas listas do usuário
+lista1 = input("Digite os elementos da primeira lista separados por espaço: ").split()
+lista2 = input("Digite os elementos da segunda lista separados por espaço: ").split()
+
+# Converter os elementos das listas em inteiros
+lista1 = [int(elemento) for elemento in lista1]
+lista2 = [int(elemento) for elemento in lista2]
+
+# Encontrar os elementos em comum entre as duas listas
+comuns = []
+soma = 0
+
+for elemento1 in lista1:
+    if elemento1 in lista2 and elemento1 not in comuns:
+        comuns.append(elemento1)
+        soma += elemento1
+
+# Criar uma tupla com os elementos em comum e a soma
+resultado = (tuple(comuns), soma)
+
+# Imprimir o resultado
+print("Os elementos em comum são:", resultado[0])
+print("A soma dos elementos em comum é:", resultado[1])
+
+'''
+
+#Leia os dados de um usuário - nome, sobrenome, idade, email - e imprima-os enumerando os mesmos.
+
+'''               MEU
+dicionario={}
+chaves=['Nome:', 'Sobrenome:', 'Idade:', 'e-mail:']
+
+for x, chave in enumerate(chaves):
+    dado=str(input(f"Digite o {chave}: "))
+    dicionario[chave]=dado
+    
+for y, chave in enumerate(chaves):    
+    print(f"{y+1}# {chave} : {dicionario[chave]}" )
+'''
+
+'''              CHAT GPT
+# Crie um dicionário vazio para armazenar as informações do usuário
+dados_usuario = {}
+
+# Solicite as informações do usuário e adicione-as ao dicionário
+dados_usuario['nome'] = input("Insira seu nome: ")
+dados_usuario['sobrenome'] = input("Insira seu sobrenome: ")
+dados_usuario['idade'] = input("Insira sua idade: ")
+dados_usuario['email'] = input("Insira seu e-mail: ")
+
+# Imprima as informações do usuário enumeradas
+for indice, chave in enumerate(dados_usuario):
+    print(f"{indice+1}. {chave.capitalize()}: {dados_usuario[chave]}")
+    '''
+
+
+#Leia 4 notas de um aluno, calcule sua média e armazene em um dicionário as seguintes informações:
+#a. Nome do aluno
+#b. As 4 notas obtidas
+#c. Maior nota
+#d. Menor nota
+#e. Média
+#f. Situação
+#g. Aprovado se média for maior ou igual a 7
+#h. Reprovado se média for menor que 7
+
+'''                       MEU MÉTODO
+dicionario={'Nome:':'Eric', 'Notas:':'', 'Maior nota:':'', 'Menor nota:':'', 'Média:':'', 'Situação:':''}
+
+notas=0
+listaNotas=[]
+
+#A. Nome do aluno
+nome=str(input("Digite o nome do aluno: "))
+dicionario['Nome:']=nome
+
+#b. As 4 notas obtidas
+for x in range(4):
+    nota=(int(input(f"Digite a nota nº{x+1}: ")))
+    notas+=nota
+    listaNotas.append(nota)
+strListaNotas=list(map(str,listaNotas)) #Alterando a lista de notas de inteiros para string
+dicionario['Notas:']=strListaNotas
+
+#c. Maior nota
+print(f"A maior nota é {max(listaNotas)}")
+
+#d. Menor nota
+print(f"A menor nota é {min(listaNotas)}")
+
+#e. Média
+media=sum(listaNotas)/len(listaNotas)
+print(media)
+
+
+print(dicionario)
+'''
+
+
+'''                CHATGPT
+# Lendo as notas do aluno
+nota1 = float(input("Digite a primeira nota: "))
+nota2 = float(input("Digite a segunda nota: "))
+nota3 = float(input("Digite a terceira nota: "))
+nota4 = float(input("Digite a quarta nota: "))
+
+# Calculando a média do aluno
+media = (nota1 + nota2 + nota3 + nota4) / 4
+
+# Armazenando as informações em um dicionário
+aluno = {
+    "nome": "João",
+    "notas": [nota1, nota2, nota3, nota4],
+    "maior_nota": max(nota1, nota2, nota3, nota4),
+    "menor_nota": min(nota1, nota2, nota3, nota4),
+    "media": media,
+    "situacao": "Aprovado" if media >= 7 else "Reprovado"
+}
+
+# Imprimindo as informações do aluno
+print("Nome:", aluno["nome"])
+print("Notas:", aluno["notas"])
+print("Maior nota:", aluno["maior_nota"])
+print("Menor nota:", aluno["menor_nota"])
+print("Média:", aluno["media"])
+print("Situação:", aluno["situacao"])
+'''
+
+#a) Acesse a idade da pessoa "João" e armazene em uma variável chamada idade_joao.
+#b) Adicione uma nova pessoa ao dicionário com nome "Ana" e idade 31.
+#c) Crie uma função chamada maior_idade que recebe um dicionário como argumento e retorna o nome da pessoa com a maior idade.
+'''
+pessoas = {
+
+    "João": 23,
+
+    "Maria": 28,
+
+    "Pedro": 35,
+
+    "Lucas": 19
+}
+'''
+'''
+idade_joao=pessoas["João"] #Resposta da A)
+
+#print(idade_joao)    #Uso apenas para confirmação da questão
+
+pessoas["Ana"]=31 #Resposta da B)
+
+#print(pessoas)     #Uso apenas para confirmação da questão
+
+def maior_idade(dicionario): # o 'dicionario' é o dicionário que será futuramente usado
+    maior_idade=0
+    nomeDaPessoaComMaiorIdade='' #Cria uma string vazia
+    for chave, valor in dicionario.items(): 
+        if valor > maior_idade:
+            maior_idade=valor
+            nomeDaPessoaComMaiorIdade=chave
+    return nomeDaPessoaComMaiorIdade
+nome_do_maior=maior_idade(pessoas) #Chamando a função com o dicionário 'pessoas'
+
+#print(nome_do_maior)     #Uso apenas para comfirmação da questão onde a função foi 'retornada' com sucesso.
+'''
+
+#IMC = peso / altura ** 2
+#Crie uma função para calcular o IMC de 4 pessoas.
+#Atenção: Use as seguintes estruturas:
+#-laço de repetição.
+#-listas
+###########################################def imc(peso:float, altura:float):
+
+'''
+def imc():
+    imcPessoas=[]
+    for x in range(2):
+        nome=str(input(f"Digite o nome da {x+1}ª pessoa: "))
+        peso=float(input(f"Digite o peso da {x+1}ª pessoa: "))
+        altura=float(input(f"Digite a altura da {x+1}ª pessoa"))
+        imc=peso/altura**2
+        imcPessoas.append({'Nome': nome, 'IMC':imc})
+    return imcPessoas
+resultado=imc()
+print(resultado)
+'''
+
+
+#Escreva uma função em Python que recebe dois números como argumentos e retorna o maior entre eles.
+#a) Implemente a função com o nome "maior_numero" e utilizando condicionais.
+#b) Implemente a mesma função, porém utilizando a função "max".
+
+'''
+def doisNumeros(n1, n2):
+    if n1>n2:
+        return n1
+    else: 
+        return n2
+#resultado=doisNumeros(70, 7)        #TESTE DE FUNÇÃO
+#print(resultado)                    #TESTE DE FUNÇÃO
+
+def maior_numero():  ####a) Implemente a função com o nome "maior_numero" e utilizando condicionais.
+    numeros=[]
+    for x in range(2):
+        numero=float(input(f"Digite o {x+1}º número: "))
+        numeros.append(numero)
+    if numeros[0]>numeros[1]:
+        return numeros[0]
+    else:
+        return numeros[1]   
+#resultado=maior_numero()       #TESTE DE FUNÇÃO
+#print(resultado)                #TESTE DE FUNÇÃO    
+
+def funcao():  ####b) Implemente a mesma função, porém utilizando a função "max".
+    numeros=[]
+    for x in range(2):
+        numero=float(input(f"Digite o {x+1}º número: "))
+        numeros.append(numero)
+    return max(numeros)
+#resultado=funcao()      #TESTE DE FUNÇÃO
+#print(resultado)        #TESTE DE FUNÇÃO
+
+'''
+#Escreva uma ÿunção que receba um número e retorne o dobro desse número.
+
+'''
+def funcao(n1):
+    if n1>0:
+        n1=n1*2
+    return n1
+resultado=funcao(2)
+print(resultado)
+'''
+
+#Escreva uma ÿunção que receba dois números e retorne o menor deles.
+
+'''def menor(n1,n2):
+    if n1<n2:
+        return n1
+    else:
+        return n2
+result=menor(166,4)
+print(result)
+'''
+
+#Escreva uma ÿunção que receba uma lista de números e retorne a soma entre eles.
+
+'''
+def listaDeNum():
+    lista=[]
+    numeros=int(input(f"Informe quantos números a lista terá: "))
+    for x in range(numeros):      
+        numero=float(input(f"Informe o {x+1}º número a ser somado: "))
+        x+=1
+        lista.append(numero)
+    return sum(lista)
+resultado=listaDeNum()
+print(resultado)
+'''
+#Escreva uma ÿunção que receba uma lista de strinĀs e retorne a quantidade de
+#strinĀs na lista.
+'''               #  CHATGPT
+def contarString(listadeString):                                         # DEF oQueAfuncaoVaiFazer(coisaQaSerParametrizada:)
+    return len(listadeString)
+'''
+
+'''                   #EU
+def contagem():
+    lista=[]
+    while True:
+        strings=input("Digite a string ou 'fim' para terminar: ")
+        if strings == 'fim':
+            break
+        else:
+            lista.append(strings)
+    return len(lista)
+resultado=contagem()
+print(resultado)
+'''
+#Escreva uma ÿunção que receba uma strinĀ e retorne a sua versão em maiúsculas.
+
+'''
+def tornarMaiusculo(string):
+    return string.upper()
+
+def maiusculo():
+    digite=input("Digite a palavra menuscula: ")
+    return digite.upper(),
+'''
+
+#Escreva uma ÿunção que receba uma lista de números e retorne o maior valor.
+
+'''
+def maiorValor():
+    lista=[]
+    qtd=int(input("Digite quantas entradas vão ocorrer: "))
+    for x in range(qtd):
+        numero=float(input(f"Digite o {x+1}º número: "))
+        x+=1
+        lista.append(numero)
+    return max(lista)
+resultado=maiorValor()
+print(resultado)
+'''
+#Escreva uma ÿunção que receba um número e verifique se ele é primo.
+
+'''def verificarPrimo():         ### POSSO PASSAR PARA O "()" O PARÂMETRO DE PRIMO E FORA DA FUNÇÃO ESCREVER resultado=verificaePrimo(NUMERO Q EU QUISER)
+    numero=int(input("DIGITE O NÚMERO: "))
+    if numero < 2:
+        return 'O número não é primo :('      
+    else:
+        for x in range (2,numero):
+            if numero % x == 0:
+                return 'O número não é primo :('      
+            else:
+                return 'PRIMO!'
+resultado=verificarPrimo()
+print(resultado)
+
+def primo():
+    y=0
+    while y==0:
+        numero=int(input("Digite o número: "))
+        if numero<2:
+            return 'O número não é primo!'
+        else:
+            for x in range(2,numero):
+                if numero % x == 0:
+                    return 'O número não é primo!'
+                return 'PRIMO!'                
+        if numero==2:
+            return 'PRIMO'
+resultado=primo()
+print(resultado)      '''
+
+#Escreva uma ÿunção que receba uma strinĀ e verifique se ela é um palíndromo.
+
+'''
+def palindromo(palavra):
+    inverso=palavra[::-1]
+    if palavra == inverso:
+        return 'É um palindromo! '
+    else:
+        return 'Não é :('
+resultado=palindromo('eric')
+print (resultado)
+'''
+#Escreva uma ÿunção que receba uma lista de números e retorne a lista em
+#ordem crescente.
+
+'''
+def ordemCrescente(lista):
+    return sorted(lista)
+
+lista=[1, 5, 2, 8, 3, 9, 4]
+imprima=ordemCrescente(lista)
+print(imprima)
+'''
+
+#Escreva uma ÿunção que receba uma lista de nomes e retorne uma lista com os
+#nomes que começam com a letra "A".
+
+'''
+def comecaComA(lista):
+    litstaNome=[]
+    for nome in lista:
+        if nome[0]=='A':
+            litstaNome.append(nome)
+    return litstaNome
+lista=['Alice', 'Eric', 'Rafa', 'Anabel']
+saida=comecaComA(lista)
+print(saida)
+'''
+
+#Escreva uma função em Python que recebe uma lista de números inteiros e retorna a média aritmética dos valores.
+
+'''def mediaComParametro(lista):
+    return sum(lista)/len(lista) #MÉDIA
+lista=[1, 2, 3]                  ##########TESTE DE SAÍDA   
+saida=mediaComParametro(lista)   ##########TESTE DE SAÍDA   
+#print(saida)                    ##########TESTE DE SAÍDA
+
+def mediaSemParametro():
+    
+    listaInt=str(input("Digite uma lista de números inteiros separados por APENAS ESPAÇO: "))
+    novaLista=[int(iteracao) for iteracao in listaInt.split()] #TRANSFORMANDO STRING EM INT REMOVENDO OS ESPAÇOS E COLOCANDO EM UMA LISTA
+    media=sum(novaLista)/len(novaLista) #MÉDIA
+    return media
+resultado=mediaSemParametro()    ##########TESTE DE SAÍDA
+print(resultado)                 ##########TESTE DE SAÍDA'''
+
+#IMC = peso / altura ** 2
+#Crie uma função para calcular o IMC de 4
+#pessoas. Atenção: Use as seguintes estruturas:
+#- laço de repetição.
+#-listas
+#-zip
+
+
+'''def calcularIMC():
+    nome = []
+    peso = []
+    altura = []
+    imc = []
+    
+    for iteracao in range(2):
+        nome_pessoa = str(input(f"Digite o NOME da {iteracao+1}ª pessoa: "))
+        peso_pessoa = float(input(f"Digite o PESO da {iteracao+1}ª pessoa: "))
+        altura_pessoa = float(input(f"Digite a ALTURA da {iteracao+1}ª pessoa: "))
+        nome.append(nome_pessoa)
+        peso.append(peso_pessoa)
+        altura.append(altura_pessoa)
+        imc.append(peso_pessoa / altura_pessoa ** 2)
+        listaGeral = list(zip(nome, imc))
+    return listaGeral
+
+result = calcularIMC()
+print(result)'''
+
+#Faça uma função para calcular o valor/hora de um funcionário.
+
+
+'''def calcularValorHora():
+    valor=float(input("Digite o valor: "))
+    hora=int(input("Digite a quantidade de horas: "))
+    calculo=valor/hora
+    return calculo
+
+result=calcularValorHora()
+print(result)'''
+
+#Faça uma função que retorne quantas letras possui uma palavra.
+#Se for passado uma frase, a função deverá retornar o número de letras, espaços vazios e quantos
+#sinais de pontuação.
+
+'''def contador():
+    digitacao=str(input("Digite: "))
+    espaco=0
+    letra=0
+    caractere=0
+    for x in digitacao:
+        if x.isspace():
+            espaco+=1
+        elif x.isalpha():
+            letra+=1
+        else:
+            caractere+=1
+    return f'Existem {espaco} espaços, {letra} letras, e {caractere} sinais de acentuação!'
+
+result=contador()
+print(result)'''
+
+
+############################################## PROVA ####################################################
+#Você foi contratado para desenvolver um programa que calcule a média de notas dos alunos de uma turma. Para isso, 
+# você deverá criar uma lista com as notas de cada aluno e, em seguida, implementar uma função que calcule a média 
+# aritmética das notas. Além disso, você deverá utilizar um loop while para pedir ao usuário que insira as notas 
+# dos alunos até que ele decida parar. Por fim, você deverá utilizar um loop for para imprimir a média de cada aluno.
+
+#a) Escreva o código para a função que calcule a média aritmética das notas.
+#b) Escreva o código para o loop while que pede ao usuário que insira as notas dos alunos.
+#c) Escreva o código para o loop for que imprime a média de cada aluno.
+
+'''dicDasNotas={}
+listaDosAlunos=[]
+
+#a) ###########ERRADO JÁ
+def calcular(dicDasNotas):
+    mediaDasNotas=dict(map(lambda item:(item[0], sum(item[1])/len(item[1])), dicDasNotas.items()))
+    return mediaDasNotas
+
+#b)
+while True:
+    nome=input("Digite o nome do aluno ou 'S' para sair do programa: ")
+    if nome.upper() == "S": #TESTAR
+        break
+    listaDosAlunos.append(nome)
+    somaDasNotas=[]
+
+    while True:
+        nota=input("Digite a nota ou 'N' para encerrar as entradas: ")
+        if nota.upper() == "N":
+            break
+        somaDasNotas.append(float(nota))
+        dicDasNotas[nome]=somaDasNotas #Não entendi??????????????????
+        
+ #c)   
+for chave, valor in dicDasNotas.items(): #o que o items faz?????????????????
+    media=calcular({chave:valor})
+    print(f"Média do aluno {chave}: {media[chave]}")  '''
+
+#desenvolva um programa que leia seis numeros int e mostre a soma apenas daqueles que forem pares
+'''
+numeros=[]
+for x in range(5):
+    
+    numero=(int(input(f"Digite o {x+1}º número: ")))
+    if numero % 2 == 0:
+        numeros.append(numero)
+    x+=1
+print(numeros)'''
+
+#Desenvolva um que leia o primeiro termo e a razão de uma PA. no final, mostre 10 primeiros termos dessa pa
+
+'''
+numero1=int(input("Digite o primeiro número da PA: "))
+razao=int(input("Digite a razão da PA: "))
+
+for x in range(10):
+    termo=numero1+x*razao
+    print(termo)'''
+
+#leia um num int e diga se é ou não um primo
+
+'''
+numero=(int(input("Digite um número: ")))
+if numero < 2:
+    print("Não primo!")
+else:
+    primo=True
+    for i in range (2,numero):
+        if numero % i == 0: #SE FOR DIVISÍVEL POR UM NÚMERO SEQUE ENTRE 2 E O NÚMERO DIGITADO
+            primo=False
+            break
+    if primo:
+        print("PRIMO")
+    else:
+        print("Não primo!")'''
+
+#LEIA UMA FRASE QUALQUER E DIGA SE ELA É UM PALINDROMO 
+
+'''
+palavra=str(input("Digite a palavra: "))
+palavraInvertida=palavra[::-1]
+if palavraInvertida == palavra:
+    print("palindromo")
+else: 
+    print("não")'''
+
+#leia o ano de nascimento de sete pessoase diga quantos são de maior
+
+'''
+deMaior = datetime.date(2005, 4, 28)
+data=input("Digite a data dd/mm/aaaa:")
+data_usuario = datetime.datetime.strptime(data, "%d/%m/%Y").date()
+if data_usuario > deMaior:
+    print("De menor")
+else:
+    print("viva a putaria")'''
+
+
+#leia o peso de 5 pessoas e mostre o maior e menor peso
+'''
+nomes=[]
+pesos=[]
+for x in range (2):
+    nome=input("Digite o nome da pessoa: ")
+    nomes.append(nome)    
+    peso=int(input("Digite o peso: "))
+    pesos.append(peso)
+    x+=1
+for y in range(3):
+    print(f"A pessoa {nomes[y]} pesa {pesos[y]}")
+    y+=1'''
+
+#programa q leia nome, idade e sexxo de 4 pessoas.
+#média de idade
+#homem mais velho
+#quantas mulheres trem menos de 20 anos
+
+
+'''pessoas={}
+quantasMulheres=0
+for x in range(2):
+    nome=input("Digite o nome da pessoa: ")
+    idade=int(input("Digite a idade da pessoa: "))
+    sexo=input("Digite o sexo da pessoa: ")
+    pessoas[nome]={"idade":idade, "sexo":sexo}
+    x+=1
+    if sexo.upper()=='M' and idade>=20:
+        quantasMulheres+=1
+        
+soma=0
+maiorIdade=18
+idadeMaisvelha=0
+homemMaisVelho=None
+
+for chave, valor in pessoas.items(): #buscando os valores do dicionário para somar
+    if valor["idade"] >= maiorIdade and valor["sexo"] == 'M':
+        homemMaisVelho=chave
+        idadeMaisvelha=valor["idade"]
+    
+        
+qtdPessoas=0
+for person in pessoas.values():
+    soma+=person['idade']
+    qtdPessoas+=1
+    
+#lista=list(pessoas.values("idades"))    
+media=soma/qtdPessoas
+#print(f"a média de idades é {media}")
+print(f"o homem mais velho é {homemMaisVelho} de idades é {idadeMaisvelha}")
+print(media)
+'''
+
+#programa q leia o sexo mas só aceite m ou f caso esteja errado peça pra digitar novamente até acertar
+'''while True:
+    sexo=str(input("Digite M ou F para o sexo: "))
+    if sexo == 'M' or sexo == 'F':
+        print("cadastrado")
+        break
+    else:
+        print("ERRO DIGITE DE NOVO")'''
+        
+#fatorial
+
+'''numero=1
+cont=1 
+fatorial=int(input("Digite um número para calcular seu fatorial: "))        
+while cont<=fatorial:
+    numero*=cont
+    cont+=1
+    
+print(numero)'''
+
+#escreva um programa que leia um numero n inteiro qualquer e mostre na tela os x primeiros elementos de uma sequencia fibonacci
+
+'''
+inicial=[0,1]
+qtdElementos=int(input("Digite a quantidade de elementos que quer vizualizar: ")) #numero final e quantidade de "prints"
+ #########COM FOR
+for x in range(qtdElementos):
+    mostrar=inicial[x]+inicial[x+1]
+    inicial.append(mostrar)
+print(inicial)
+contador=0#altero pra 0 
+ ########### COM WHILE
+while len(inicial) <= qtdElementos:
+    mostrar=inicial[contador]+inicial[contador+1]
+    inicial.append(mostrar)
+    contador+=1
+print(inicial)'''
+
+#LEIA NUMEROS INTEIROS E MOSTRE A MÉDIA
+'''
+numeros=[]
+
+while True:
+    numero=int(input("Digite um número ou 0 para encerrar: "))
+    if numero != 0:
+       numeros.append(numero)
+    else:
+        break
+media=sum(numeros)/len(numeros)
+print(media)'''
+    
+#leia varios inteiros e parar com '0' e mostre quantos num foram digitados e a soma entre eles
+'''
+numeros=[]
+while True:
+    numero=int(input("Digite um numero, ou 0 para encerrar: "))
+    if numero !=0:
+        numeros.append(numero)
+    else:
+        break
+print(len(numeros))'''
+
+#tabuada
+'''
+while True: 
+    multiplicador=int(input("Digite o multiplicador ou 0 para sair: "))
+    if multiplicador==0:
+        break
+    else:
+        for x in range(10):
+            print(f" {x+1} x {multiplicador} = {multiplicador*(x+1)} ")'''
+
+#jogar par ou impar com o pc, o jogo só será interrompido quando o jogador perder mostrando o total de vitórias consecutivas ao fim
+'''
+contadorVitorias=0
+pcVenceu=False
+while pcVenceu==False:
+    numero=int(input("Digite um valor: "))
+    parOuImpar=str(input("Par ou Ímpar? [P/I]: ")).upper()
+    pc=random.randint(1,10)
+    total=pc+numero
+    
+    print(f"Você jogou {numero} e o computador jogou {pc}. O total deu {total}.")
+    
+    if total %2 == 0 and parOuImpar == 'P'or total %2 != 0 and parOuImpar == 'I':
+        print("Você VENCEU! \nVamos jogar novamente...")
+        contadorVitorias+=1
+        continue
+    else:
+        print(f"Você perdeu!\nGAME OVER!\nVocê venceu {contadorVitorias} vezes.")
+        pcVenceu=True
+        break'''
+
+#leia a idade e sexo de varias pessoas. a cada pessoa cadastrada, o programa deve perguntar ao usuário de quer ou nao continuar
+#e perguntar:
+    #a)quantas pessoas tem mais de 18
+    #b)quantos homens foram cadastrados
+    #c)quantas mulheres tem menos de 20
+'''
+sexos=[]
+homens=[]
+mulheres=[]
+idades=[]
+deMaior=[]
+while True:
+    sexo=input("digite um sexo [F/M] ou 'FIM' para encerrar: ").upper()
+    sexos.append(sexo)
+    if sexo == 'F':
+        mulheres.append(sexo)
+    elif sexo == 'M':
+        homens.append(sexo)
+    else:
+        break
+    idade=int(input("digite a idade da pessoa: "))
+    idades.append(idade)
+    if idade >= 18:
+        deMaior.append(idade)
+    
+print(f"Existem {len(homens)} homens")'''
+
+#criar caixa eletronico:
+'''
+sacar=int(input("Digite qual valor quer sacar: "))
+ced = 100
+totCedulas=0
+while True:
+    if sacar >= ced:#quantas x eu consigo tirar 100 do valor sacável
+        sacar-=ced
+        totCedulas+=1
+    else: #verificar qual a cédula atual
+        print(f"Total de {totCedulas} cédulas de R${ced}")
+        if ced==100:
+            ced=20
+        elif ced==20:
+            ced=10
+        elif ced==10:
+            ced=5
+        elif ced==5:
+            ced=0
+        totCedulas=0
+        if sacar ==0:
+            break'''
+
+#programa com uma tupla totalmente preenchida com uma contagem por extensoo, so zero ao vinte.
+#seu programa deve ler um numero pelo teclado entre 1 e 20 e mostrar o extenso dele
+    
+
+'''
+tupla=('um', 'dois', 'três')
+while True:
+    numero=int(input("Digite o número de 1 a 3:"))
+    if numero>=1 or numero<=3:
+        print(f"O número {numero} por extenso é: {tupla[numero-1]}")   
+        break
+    else:
+        print(f"Número incorreto, digite novasmente") '''  
+
+#programa que gere 5 numeros aleatorios e coloque em tupla, depois mostre a listagem de numeros gerados e indique o menor e maior
+
+'''
+num=(randint(1,10),randint(1,10),randint(1,10),randint(1,10),randint(1,10))#5 numeros aleatórios
+print(f"Os valores {num} foram sorteados")
+for x in num:
+    print(f"{x}, ", end='') #listagem
+print(f"\nO maior valor foi {max(num)}")#maximo
+print(f"O menor valor foi {min(num)}")#mínimo'''
