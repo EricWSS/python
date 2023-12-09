@@ -1,5 +1,0 @@
-nome=(input("Digite o nome: "))
-listaNome=list(nome) # Converte o nome em uma lista de caracteres
-listaNome.reverse() # Inverte a lista
-nomeInvertido=''.join(listaNome) # Converte a lista de volta para uma string
-print(nomeInvertido)
